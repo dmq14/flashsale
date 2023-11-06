@@ -62,7 +62,11 @@
 .carousel-control-next{
     justify-content: flex-end !important;
 }
+.nav-item img{
+    width: 65px;
+    height: 31px;
 
+}
 .scroll::-webkit-scrollbar {
     width: 8px;
     height: 8px;
