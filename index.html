@@ -1,14 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="mb-5">
+      <img
+        src="https://cdn.discordapp.com/attachments/991289858150649947/1170999670223409152/Big-banner.png?ex=655b156d&is=6548a06d&hm=8cd8128d7ed156d63d85eef0b1a788f29b9b6fb5f370fe0e033aaf95fa06304f&"
+        class="img-fluid"
+        alt="Responsive image"
+      />
+    </div>
+    <div class="container">
+      <div
+        id="carouselExampleInterval"
+        class="carousel slide"
+        data-bs-ride="carousel "
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <div class="row">
+              <div class="col pr-1">
+                <img
+                  src="https://cdn.discordapp.com/attachments/991289858150649947/1171000530651320360/banner-1.png?ex=655b163a&is=6548a13a&hm=7fbf094f3508c7573ae7c490cb2e59492bbf474f4760b17d9de2a071f9b32ec9&"
+                  class="d-block w-100 rounded"
+                  alt="First slide"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://cdn.discordapp.com/attachments/991289858150649947/1171000531003650109/banner-2.png?ex=655b163a&is=6548a13a&hm=f7cbb56adb79b7cc77ffbbe3ce36961683d3950dda263439d3e55475100ae709&"
+                  class="d-block w-100 rounded"
+                  alt="Second slide"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <div class="row">
+              <div class="col pr-1">
+                <img
+                  src="https://cdn.discordapp.com/attachments/991289858150649947/1171000531276283986/banner-3.png?ex=655b163a&is=6548a13a&hm=e6f81113b8b0c76be7782974c46a74a37bc03d8956607ebf2bb918e493df1c41&"
+                  class="d-block w-100 rounded"
+                  alt="First slide 1"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://cdn.discordapp.com/attachments/991289858150649947/1171000531582464080/banner-4.png?ex=655b163a&is=6548a13a&hm=ae43b420e22989c902dfe97e22da17536f7fbe43325f9db6bee726f225daa7c7&"
+                  class="d-block w-100 rounded"
+                  alt="First slide 2"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col pr-1">
+                <img
+                  src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/10/banner/LAP-GAMING-720-220-720x220.png"
+                  class="d-block w-100 rounded"
+                  alt="Third slide 1"
+                />
+              </div>
+              <div class="col">
+                <img
+                  src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/2023/10/banner/vivo-v29-720-220-720x220-3.png"
+                  class="d-block w-100 rounded"
+                  alt="Third slide 2"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
     
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</body>
+    <div class="container bg-info mt-5 p-3">
+        <h2>List of Products</h2>
+        <div class="product-list p-3 scroll" id="productListContainer">
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <div class="scroll-x">
+
+            <button class="btn-scroll-x" onclick="scrollContainerLeft()">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+            </button>
+            <button class="btn-scroll-x" onclick="scrollContainerRight()"> 
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="product-list p-3 scroll" id="productListContainer2">
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="product">
+                <div class="card">
+                    <img
+                      src="https://cdn.tgdd.vn/Products/Images/7077/283903/amazfit-bip-3-pro-den-tn-600x600.jpg"
+                      class="card-img-top img-prd"
+                      alt="Product Image"
+                    />
+                    <div class="card-body">
+                      <p class="text-center prd-name">
+                        Dell Inspiron 16 5630 (2023) | Core i5-1340P | RAM 16GB
+                        DDR5 | SSD 512GB | 16 inch FHD+ | New FullBox
+                      </p>
+                      <p class="text-center price">10.000.000đ</p>
+                      <div
+                        class="d-flex justify-content-center align-items-center"
+                      >
+                        <p class="line-through me-2">20.000.000đ</p>
+                        <p class="percent float-left percent">-25%</p>
+                      </div>
+                      <div class="bg-light border-sale">
+                        <div
+                          class="border-sale-left"
+                          style="background-color: #ffa500; width: 80%"
+                        >
+                          <img
+                            width="15"
+                            height="15"
+                            src="https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_100/https://cdn.tgdd.vn/mwgcart/mwgcore/ContentMwg/images/fs-iconfire.png"
+                            alt="icon flashsale"
+                          />
+                          <span class="">
+                            <b class="product-left">Còn 26/30 suất</b>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+
+    
+    <div style="height: 1000px">sađá</div>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

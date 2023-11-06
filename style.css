@@ -1,0 +1,51 @@
+.pr-1{
+    padding-right: 0px !important;
+}
+.line-through{
+    text-decoration: line-through;
+}
+.border-sale{
+    border-radius: 20px;
+}
+.border-sale-left{
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.price{
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 18px;
+}
+.percent{
+    background-color: 	#FFB6C1;
+    color: #ff0000;
+    border-radius: 11px;
+    
+}
+.product-list {
+    display: flex;
+    overflow-x: hidden;
+    width: 100%;
+}
+.product {
+    flex: 0 0 200px;
+    margin-right: 10px;
+}
+.img-prd {
+    width: 100%;
+    height: auto;
+}
+.scroll-x{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-scroll-x{
+    border: none;
+    background: none;
+}
+.carousel-control-prev{
+    justify-content: flex-start;
+}
+.carousel-control-next{
+    justify-content: flex-end !important;
+}
