@@ -15,6 +15,14 @@
     border-radius: 50px !important;
 
 }
+.border-bottom{
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.border-top{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
 .nav-pills .nav-link.active {
     background-color: rgba(255, 255, 0, 0.5) !important;
     transform: scale(0.8);
@@ -34,7 +42,28 @@
     border-radius: 11px;
     
 }
-
+.banner-prd{
+    width: 100%;
+    height: auto;
+}
+.bg-laptop-new{
+    background-color: #fda70b;
+}
+.bg-laptop-gaming{
+    background-color: #2E1B5B;
+}
+.bg-laptop-cu{
+    background-color: #070e30;
+}
+.bg-pc-theo-nhu-cau{
+    background-color: #fd8421;
+}
+.bg-man-hinh{
+    background-color: #0b0b0b;
+}
+.bg-phu-kien{
+    background-color: #0E1727;
+}
 .menu-btn {
     position: fixed;
     top: 50%;
