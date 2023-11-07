@@ -17,6 +17,10 @@
 }
 .nav-pills .nav-link.active {
     background-color: rgba(255, 255, 0, 0.5) !important;
+    transform: scale(0.8);
+}
+.fade{
+    position: relative;
 
 }
 .price{
@@ -28,6 +32,22 @@
     background-color: 	#FFB6C1;
     color: #ff0000;
     border-radius: 11px;
+    
+}
+
+.menu-btn {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 22;
+  }
+.custom-btn-gr label{
+    font-size: 11px;
+}
+.cus-label{
+    height: 50px;
+    width: 75px !important;
     
 }
 .product-list {
@@ -56,6 +76,21 @@
     border: none;
     background: none;
 }
+.scroll-prd{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    z-index: 3;
+}
+.btn-scroll-prd{
+    border: none;
+    background: none;
+    background-color: rgba(128, 128, 128, 0.3);
+}
 .carousel-control-prev{
     justify-content: flex-start !important;
 }
@@ -68,8 +103,8 @@
 
 }
 .scroll::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+    width: 0px;
+    height: 0px;
   }
   .scroll-none::-webkit-scrollbar {
     width: 0px;
