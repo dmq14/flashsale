@@ -359,7 +359,7 @@ span#minutes::before {
     }
     .cus-label {
         height: 30px !important;
-        width: auto !important;
+        width: 12.5% !important;
         display: flex;
         justify-content: center;
         border-radius: 0px !important;
