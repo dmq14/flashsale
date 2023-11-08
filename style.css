@@ -96,7 +96,7 @@
 }
 
 .title-flash-sale {
-    background: url("image/image-title/background-flashsale.GIF");
+    background: url("background-flashsale.GIF");
     height: 120px;
     width: 100%;
     display: flex;
