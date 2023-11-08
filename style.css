@@ -15,10 +15,7 @@
     border-bottom-left-radius: 20px;
 }
 
-.border-btn {
-    border-radius: 50px !important;
 
-}
 
 .border-bottom {
     border-bottom-right-radius: 15px;
@@ -31,10 +28,11 @@
 }
 
 .nav-pills .nav-link.active {
-    background-color: rgba(255, 255, 0, 0.5) !important;
-    transform: scale(0.8);
+    border-radius: 0px;
+    background: none !important;
+    transform: scale(0.9);
+    border-bottom: 3px solid white;
 }
-
 .fade {
     position: relative;
 
@@ -58,7 +56,9 @@
     height: auto;
 
 }
-
+.bg-flash-sale{
+    background-color: #fd7e14
+}
 .bg-laptop-new {
     background-color: #fda70b;
 }
@@ -87,13 +87,7 @@
     background-color: #0E1727;
 }
 
-.menu-btn {
-    position: fixed;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    z-index: 22;
-}
+
 
 .custom-btn-gr label {
     font-size: 11px;
@@ -110,6 +104,7 @@
 
 }
 
+
 .time-end-flashSale {
     width: 32%;
     margin-top: auto;
@@ -123,6 +118,14 @@
     width: 100%;
     text-align: center;
     color: black;
+}
+.title-sale {
+    font-size: 23px;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 0, 0);
 }
 
 .time-end {
@@ -207,9 +210,9 @@ span#minutes::before {
 }
 
 .cus-label {
-    height: 50px;
-    width: 75px !important;
-
+    height: 50px !important;
+    width: 70px !important;
+    margin-top: 2px !important;
 }
 
 .product-list {
@@ -238,8 +241,8 @@ span#minutes::before {
 
     z-index: 3;
     display: flex;
-    top: 55%;
-    width: 98%;
+    top: 50%;
+    width: 100%;
     position: absolute;
     transform: translateY(-50%);
     height: 60px;
@@ -262,6 +265,11 @@ span#minutes::before {
     justify-content: space-between;
     z-index: 3;
 }
+
+
+
+
+
 
 .btn-scroll-prd {
     border: none;
@@ -287,21 +295,75 @@ span#minutes::before {
     width: 0px;
     height: 0px;
 }
-
+.scroll-btn::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
 .scroll-none::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
 
-.scroll::-webkit-scrollbar-track {
-    background: #ffffff;
+.scroll-btn::-webkit-scrollbar-track {
+    background: #ffffff !important;
 }
 
-.scroll::-webkit-scrollbar-thumb {
-    background-color: #FF914D;
+.scroll-btn::-webkit-scrollbar-thumb {
+    background-color: #ff0000 !important;
     border-radius: 6px;
 }
 
-.scroll::-webkit-scrollbar-thumb:hover {
-    background: #d87e3e;
+.scroll-btn::-webkit-scrollbar-thumb:hover {
+    background: #7e2f19 !important;
 }
+
+@media only screen and (min-width: 691px) {
+    .menu-btn {
+        position: fixed;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        z-index: 22;
+    }
+    .menu-btn {
+        max-height: 100%;
+        overflow-y: auto; 
+      }
+      
+      
+      .menu-btn .scroll-btn {
+        display: flex;
+      }
+}
+@media only screen and (max-width: 690px) {
+    .scroll-btn{
+        flex-direction: row !important;
+    }
+    .menu-btn {
+        position: fixed;
+        top: -3px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 22;
+        width: 100%;
+        background-color: #ffffff;
+      }
+      .custom-btn-gr .cus-label {
+        display: flex;
+        align-items: center;
+        font-size: 6px;
+    }
+      
+    .menu-btn .scroll-btn {
+        display: flex;
+    }
+    .cus-label {
+        height: 30px !important;
+        width: auto !important;
+        display: flex;
+        justify-content: center;
+        border-radius: 0px !important;
+    }
+
+
+  }
