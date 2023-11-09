@@ -39,7 +39,11 @@
     position: relative;
 
 }
-
+.btn-more{
+    margin-top: 5px;
+    background-color: #ffffff !important;
+    width: 20%;
+}
 .price {
     color: #ff0000;
     font-weight: bold;
@@ -323,6 +327,8 @@ span#minutes::before {
     flex-wrap: inherit !important;
     overflow-x: auto !important;
     justify-content: center;
+    display: flex;
+    align-items: center;
 }
 
 .custom-font-btn {
