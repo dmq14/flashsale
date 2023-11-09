@@ -100,7 +100,7 @@
 }
 
 .title-flash-sale {
-    background: url("background-flashsale.GIF");
+    background: url("image-flash-sale/flash-sale-1320-120.gif");
     height: 120px;
     width: 100%;
     display: flex;
@@ -108,6 +108,10 @@
     padding: 10px 0;
     padding-left: 50%;
 
+}
+
+.title-countdown {
+    font-size: 18px !important;
 }
 
 .time-end-flashSale {
@@ -304,4 +308,84 @@ span#minutes::before {
 
 .scroll::-webkit-scrollbar-thumb:hover {
     background: #d87e3e;
+}
+
+@media screen and (max-width:1024px) {
+    .title-flash-sale {
+        background: url("image-flash-sale/flash-sale-960-120.gif")no-repeat;
+        padding-left: 45%;
+    }
+
+    .title-countdown {
+        font-size: 12px !important;
+    }
+
+    .time-end {
+        font-size: 24px !important;
+        width: 80%;
+    }
+
+    span#seconds::before,
+    span#minutes::before {
+        font-size: 15px;
+
+    }
+
+    .listing-timeline {
+        margin-top: auto;
+        margin-bottom: auto;
+
+    }
+
+    span.badge {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .title-flash-sale {
+        background: url("image-flash-sale/flash-sale-720-200.gif");
+        height: 190px;
+        padding-left: 0;
+        display: block;
+    }
+
+    .time-end-flashSale {
+        width: 40%;
+        margin-left: 60%;
+        margin-top: 20px;
+    }
+
+    .listing-timeline {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .title-countdown {
+        font-size: 15px !important;
+    }
+
+    span.badge {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .title-flash-sale {
+        background: url("image-flash-sale/flash-sale-480-200.gif");
+        height: 170px;
+    }
+
+    .listing-timeline {
+
+        margin-top: 10px;
+    }
+
+    .title-countdown {
+        font-size: 14px !important;
+    }
+
+    span.badge {
+        font-size: 16px;
+    }
 }
