@@ -602,3 +602,17 @@ function applyUpcomingStyles() {
         if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
     }
 }
+
+const container = document.querySelector('.scrollable-list-container');
+const cards = document.querySelector('.icon-list-custom-ul');
+
+function checkOverflow() {
+    if (cards.scrollWidth > container.clientWidth) {
+        cards.style.justifyContent = 'space-between';
+    } else {
+        cards.style.justifyContent = 'center';
+    }
+}
+
+window.addEventListener('resize', checkOverflow);
+checkOverflow();

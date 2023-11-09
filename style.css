@@ -310,6 +310,44 @@ span#minutes::before {
     background: #d87e3e;
 }
 
+.icon-list-custom-ul {
+    --bs-nav-link-padding-x: 2rem;
+}
+
+.icon-list-custom-button {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.icon-list-custom-image {
+    width: auto !important;
+    height: auto !important;
+    max-width: 120px !important;
+    max-height: 60px !important;
+}
+
+.ul-custom-icon {
+    flex-wrap: inherit !important;
+    overflow-x: auto !important;
+    justify-content: center;
+}
+
+.custom-font-btn {
+    font-size: larger !important;
+    color: black !important;
+    font-weight: 500 !important;
+}
+
+.custom-font-btn-white {
+    font-size: larger !important;
+    color: snow !important;
+    font-weight: 500 !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: rgb(252 249 7 / 84%) !important;
+}
+
 @media screen and (max-width:1024px) {
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-960-120.gif")no-repeat;
