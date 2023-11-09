@@ -95,9 +95,7 @@
     z-index: 22;
 }
 
-.custom-btn-gr label {
-    font-size: 11px;
-}
+
 
 .title-flash-sale {
     background: url("image-flash-sale/flash-sale-1320-120.gif");
@@ -210,11 +208,6 @@ span#minutes::before {
     /* Mặc định hiển thị thanh gạch ở vị trí bắt đầu */
 }
 
-.cus-label {
-    height: 50px;
-    width: 75px !important;
-
-}
 
 .product-list {
     display: flex;
