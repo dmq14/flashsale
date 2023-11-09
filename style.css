@@ -340,7 +340,19 @@ span#minutes::before {
 .nav-pills .nav-link.active {
     background-color: rgb(252 249 7 / 84%) !important;
 }
+.cus-label {
+    height: 50px !important;
+    width: 70px !important;
+    margin-top: 2px !important;
+}
 
+.custom-btn-gr label {
+    font-size: 11px;
+
+}
+.menu-btn-mobile{
+    display: none;
+}
 @media screen and (max-width:1024px) {
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-960-120.gif")no-repeat;
@@ -399,6 +411,42 @@ span#minutes::before {
     span.badge {
         font-size: 17px;
     }
+    .mb-mg{
+        margin-top: 60px;
+    }
+    .menu-btn{
+        display: none;
+    }
+    .menu-btn-mobile{
+        display: flex;
+        max-width:100%;
+        background-color: #ffffff;
+        position: fixed;
+        top: 0px;
+        z-index: 22;
+    }
+    .cus-label-mobile {
+        height: 50px !important;
+        width: 130px !important;
+        border-radius: 0px !important;
+        display: flex !important;
+        align-items: center;
+    }
+    .custom-btn-gr-mobile label {
+        font-size: 14px;
+    }
+    .custom-btn-gr-mobile{
+        max-width: 100%;
+        position: relative;
+        z-index: 3;
+        overflow: visible;
+        white-space: unset;
+        display: none;
+        white-space: nowrap;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
 }
 
 @media screen and (max-width:480px) {
