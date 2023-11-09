@@ -1,3 +1,24 @@
+let lastChecked = 0;
+const btns = document.querySelectorAll(".btn-check");
+const sections = document.querySelectorAll("section");
+
+btns.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+        sections[index].scrollIntoView({ behavior: "smooth" });
+        lastChecked = index;
+    });
+});
+
+window.addEventListener("scroll", () => {
+    sections.forEach((section, index) => {
+        const top = section.getBoundingClientRect().top;
+        if (top >= 0 && top <= window.innerHeight) {
+            btns[lastChecked].checked = false;
+            btns[index].checked = true;
+            lastChecked = index;
+        }
+    });
+});
 function scrollContainerLeft() {
     document.getElementById('productListContainer').scrollBy({
         left: -500,
@@ -15,6 +36,27 @@ function scrollContainerRight() {
         behavior: 'smooth'
     });
     document.getElementById('productListContainer2').scrollBy({
+        left: 500,
+        behavior: 'smooth'
+    });
+}
+function scrollComingsoonLeft() {
+    document.getElementById('scrollComingsoon').scrollBy({
+        left: -500,
+        behavior: 'smooth'
+    });
+    document.getElementById('scrollComingsoon2').scrollBy({
+        left: -500,
+        behavior: 'smooth'
+    });
+}
+
+function scrollComingsoonRight() {
+    document.getElementById('scrollComingsoon').scrollBy({
+        left: 500,
+        behavior: 'smooth'
+    });
+    document.getElementById('scrollComingsoon2').scrollBy({
         left: 500,
         behavior: 'smooth'
     });
@@ -523,8 +565,6 @@ function updateCountdown() {
 
 // Cập nhật thời gian mỗi giây
 var x = setInterval(updateCountdown, 1000);
-
-
 //underline upcoming and happening
 applyHappeningStyles();
 function applyHappeningStyles() {

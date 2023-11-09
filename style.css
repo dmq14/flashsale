@@ -373,7 +373,7 @@ span#minutes::before {
 @media screen and (max-width:480px) {
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-480-200.gif");
-        height: 170px;
+        height: 160px;
     }
 
     .listing-timeline {
