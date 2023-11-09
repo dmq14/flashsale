@@ -15,7 +15,10 @@
     border-bottom-left-radius: 20px;
 }
 
+.border-btn {
+    border-radius: 50px !important;
 
+}
 
 .border-bottom {
     border-bottom-right-radius: 15px;
@@ -28,11 +31,10 @@
 }
 
 .nav-pills .nav-link.active {
-    border-radius: 0px;
-    background: none !important;
-    transform: scale(0.9);
-    border-bottom: 3px solid white;
+    background-color: rgba(255, 255, 0, 0.5) !important;
+    transform: scale(0.8);
 }
+
 .fade {
     position: relative;
 
@@ -56,9 +58,7 @@
     height: auto;
 
 }
-.bg-flash-sale{
-    background-color: #fd7e14
-}
+
 .bg-laptop-new {
     background-color: #fda70b;
 }
@@ -87,12 +87,18 @@
     background-color: #0E1727;
 }
 
-
+.menu-btn {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 22;
+}
 
 
 
 .title-flash-sale {
-    background: url("background-flashsale.GIF");
+    background: url("image-flash-sale/flash-sale-1320-120.gif");
     height: 120px;
     width: 100%;
     display: flex;
@@ -102,6 +108,9 @@
 
 }
 
+.title-countdown {
+    font-size: 18px !important;
+}
 
 .time-end-flashSale {
     width: 32%;
@@ -116,14 +125,6 @@
     width: 100%;
     text-align: center;
     color: black;
-}
-.title-sale {
-    font-size: 23px;
-    text-transform: uppercase;
-    font-weight: bold;
-    width: 100%;
-    text-align: center;
-    color: rgb(255, 0, 0);
 }
 
 .time-end {
@@ -234,8 +235,8 @@ span#minutes::before {
 
     z-index: 3;
     display: flex;
-    top: 50%;
-    width: 100%;
+    top: 55%;
+    width: 98%;
     position: absolute;
     transform: translateY(-50%);
     height: 60px;
@@ -258,11 +259,6 @@ span#minutes::before {
     justify-content: space-between;
     z-index: 3;
 }
-
-
-
-
-
 
 .btn-scroll-prd {
     border: none;
@@ -288,77 +284,101 @@ span#minutes::before {
     width: 0px;
     height: 0px;
 }
-.scroll-btn::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-}
+
 .scroll-none::-webkit-scrollbar {
     width: 0px;
     height: 0px;
 }
 
-.scroll-btn::-webkit-scrollbar-track {
-    background: #ffffff !important;
+.scroll::-webkit-scrollbar-track {
+    background: #ffffff;
 }
 
-.scroll-btn::-webkit-scrollbar-thumb {
-    background-color: #ff0000 !important;
+.scroll::-webkit-scrollbar-thumb {
+    background-color: #FF914D;
     border-radius: 6px;
 }
 
-.scroll-btn::-webkit-scrollbar-thumb:hover {
-    background: #7e2f19 !important;
+.scroll::-webkit-scrollbar-thumb:hover {
+    background: #d87e3e;
 }
 
-@media only screen and (min-width: 691px) {
-    .menu-btn-mobile{
-        display: none;
-    }
-    .cus-label {
-        height: 50px !important;
-        width: 70px !important;
-        margin-top: 2px !important;
-    }
-    .custom-btn-gr label {
-        font-size: 11px;
-    }
-    .menu-btn {
-        position: fixed;
-        top: 50%;
-        right: 10px;
-        transform: translateY(-50%);
-        z-index: 22;
-    }
-    .menu-btn {
-        max-height: 100%;
-        overflow-y: auto; 
-      }
-      
-      
-      .menu-btn .scroll-btn {
-        display: flex;
-      }
-}
-@media only screen and (max-width: 690px) {
-   
-    .menu-btn{
-        display: none !important;
-    }
-    .banner-mg{
-        margin-top: 40px;
-    }
-    .custom-btn-gr label {
-        font-size: 12px;
-        width: 100px;
-        height: 50px;
+@media screen and (max-width:1024px) {
+    .title-flash-sale {
+        background: url("image-flash-sale/flash-sale-960-120.gif")no-repeat;
+        padding-left: 45%;
     }
 
-    .menu-btn-mobile{
-        display: flex;
-        position: fixed;
+    .title-countdown {
+        font-size: 12px !important;
+    }
+
+    .time-end {
+        font-size: 24px !important;
+        width: 80%;
+    }
+
+    span#seconds::before,
+    span#minutes::before {
+        font-size: 15px;
+
+    }
+
+    .listing-timeline {
+        margin-top: auto;
+        margin-bottom: auto;
+
+    }
+
+    span.badge {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .title-flash-sale {
+        background: url("image-flash-sale/flash-sale-720-200.gif");
+        height: 190px;
+        padding-left: 0;
+        display: block;
+    }
+
+    .time-end-flashSale {
+        width: 40%;
+        margin-left: 60%;
+        margin-top: 20px;
+    }
+
+    .listing-timeline {
         width: 100%;
-        top: 10px;
-        z-index: 1000;
+        margin-top: 30px;
     }
 
-  }
+    .title-countdown {
+        font-size: 15px !important;
+    }
+
+    span.badge {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .title-flash-sale {
+        background: url("image-flash-sale/flash-sale-480-200.gif");
+        height: 160px;
+    }
+
+    .listing-timeline {
+
+        margin-top: 10px;
+    }
+
+    .title-countdown {
+        font-size: 14px !important;
+    }
+
+    span.badge {
+        font-size: 16px;
+    }
+}

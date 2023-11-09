@@ -3,21 +3,21 @@ const btns = document.querySelectorAll(".btn-check");
 const sections = document.querySelectorAll("section");
 
 btns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    sections[index].scrollIntoView({ behavior: "smooth" });
-    lastChecked = index;
-  });
+    btn.addEventListener("click", () => {
+        sections[index].scrollIntoView({ behavior: "smooth" });
+        lastChecked = index;
+    });
 });
 
 window.addEventListener("scroll", () => {
-  sections.forEach((section, index) => {
-    const top = section.getBoundingClientRect().top;
-    if (top >= 0 && top <= window.innerHeight) {
-      btns[lastChecked].checked = false;
-      btns[index].checked = true;
-      lastChecked = index;
-    }
-  });
+    sections.forEach((section, index) => {
+        const top = section.getBoundingClientRect().top;
+        if (top >= 0 && top <= window.innerHeight) {
+            btns[lastChecked].checked = false;
+            btns[index].checked = true;
+            lastChecked = index;
+        }
+    });
 });
 function scrollContainerLeft() {
     document.getElementById('productListContainer').scrollBy({
@@ -532,4 +532,73 @@ function scrollramRight() {
         left: 500,
         behavior: 'smooth'
     });
+}
+
+//time count down
+function updateCountdown() {
+    var now = new Date();
+    var midnight = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1, // Ngày tiếp theo
+        0, 0, 0 // 12h đêm
+    );
+    var timeUntilMidnight = midnight - now;
+
+    var hours = Math.floor(timeUntilMidnight / (1000 * 60 * 60));
+    var minutes = Math.floor((timeUntilMidnight % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeUntilMidnight % (1000 * 60)) / 1000);
+
+    hours = hours.toString().padStart(2, '0'); // Format giờ thành số kép
+    minutes = minutes.toString().padStart(2, '0'); // Format phút thành số kép
+    seconds = seconds.toString().padStart(2, '0'); // Format giây thành số kép
+
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // Cập nhật lại thời gian đến 12h đêm sau khi đếm ngược kết thúc
+    if (timeUntilMidnight <= 0) {
+        updateCountdown();
+    }
+}
+
+// Cập nhật thời gian mỗi giây
+var x = setInterval(updateCountdown, 1000);
+//underline upcoming and happening
+applyHappeningStyles();
+function applyHappeningStyles() {
+    const happeningButton = document.querySelector('.happening');
+    const upcomingButton = document.querySelector('.upcoming');
+    // Thêm hoặc xóa các thuộc tính cho happening button
+    if (!happeningButton.classList.contains('active')) {
+        happeningButton.classList.add('active');
+        happeningButton.style.position = 'relative'; // Thêm thuộc tính vị trí
+        happeningButton.innerHTML += `<div class="underline"></div>`; // Thêm phần tử div nhấp nháy
+        upcomingButton.classList.remove('active');
+        upcomingButton.style.position = ''; // Xóa thuộc tính vị trí
+        const underline = upcomingButton.querySelector('.underline');
+        if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
+    } else {
+        happeningButton.classList.remove('active');
+        happeningButton.style.position = ''; // Xóa thuộc tính vị trí
+        const underline = happeningButton.querySelector('.underline');
+        if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
+    }
+}
+
+function applyUpcomingStyles() {
+    const happeningButton = document.querySelector('.happening');
+    const upcomingButton = document.querySelector('.upcoming');
+
+    // Thêm hoặc xóa các thuộc tính cho upcoming button
+    if (!upcomingButton.classList.contains('active')) {
+        upcomingButton.classList.add('active');
+        upcomingButton.style.position = 'relative'; // Thêm thuộc tính vị trí
+        upcomingButton.innerHTML += `<div class="underline"></div>`; // Thêm phần tử div nhấp nháy
+        happeningButton.classList.remove('active');
+        happeningButton.style.position = ''; // Xóa thuộc tính vị trí
+        const underline = happeningButton.querySelector('.underline');
+        if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
+    }
 }
