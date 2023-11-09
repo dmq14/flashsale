@@ -445,6 +445,7 @@ span#minutes::before {
         white-space: nowrap;
         overflow-x: auto;
         overflow-y: hidden;
+        border-radius: unset !important;
     }
 
 }
