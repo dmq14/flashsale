@@ -89,9 +89,7 @@
 
 
 
-.custom-btn-gr label {
-    font-size: 11px;
-}
+
 
 .title-flash-sale {
     background: url("background-flashsale.GIF");
@@ -209,11 +207,6 @@ span#minutes::before {
     /* Mặc định hiển thị thanh gạch ở vị trí bắt đầu */
 }
 
-.cus-label {
-    height: 50px !important;
-    width: 70px !important;
-    margin-top: 2px !important;
-}
 
 .product-list {
     display: flex;
@@ -318,6 +311,17 @@ span#minutes::before {
 }
 
 @media only screen and (min-width: 691px) {
+    .menu-btn-mobile{
+        display: none;
+    }
+    .cus-label {
+        height: 50px !important;
+        width: 70px !important;
+        margin-top: 2px !important;
+    }
+    .custom-btn-gr label {
+        font-size: 11px;
+    }
     .menu-btn {
         position: fixed;
         top: 50%;
@@ -336,35 +340,25 @@ span#minutes::before {
       }
 }
 @media only screen and (max-width: 690px) {
-    .scroll-btn{
-        flex-direction: row !important;
-        margin-left: -1px !important;
+   
+    .menu-btn{
+        display: none !important;
     }
-    .menu-btn {
-        position: fixed;
-        top: -3px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 22;
-        width: 100%;
-        background-color: #ffffff;
-      }
-      .custom-btn-gr .cus-label {
-        display: flex;
-        align-items: center;
-        font-size: 6px;
+    .banner-mg{
+        margin-top: 40px;
     }
-      
-    .menu-btn .scroll-btn {
-        display: flex;
-    }
-    .cus-label {
-        height: 30px !important;
-        width: 12.5% !important;
-        display: flex;
-        justify-content: center;
-        border-radius: 0px !important;
+    .custom-btn-gr label {
+        font-size: 12px;
+        width: 100px;
+        height: 50px;
     }
 
+    .menu-btn-mobile{
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 10px;
+        z-index: 1000;
+    }
 
   }
