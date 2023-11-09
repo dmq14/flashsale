@@ -338,6 +338,7 @@ span#minutes::before {
 @media only screen and (max-width: 690px) {
     .scroll-btn{
         flex-direction: row !important;
+        margin-left: -1px !important;
     }
     .menu-btn {
         position: fixed;
