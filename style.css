@@ -290,6 +290,7 @@ span#minutes::before {
     transform: translateY(-50%);
     height: 60px;
     justify-content: space-between;
+    align-items: center;
 }
 
 .btn-scroll-x {
@@ -501,7 +502,11 @@ h3.title-countdown {
         padding-top: 5px !important;
     }
 
-
+    .btn-scroll-x, .btn-scroll-prd {
+        display: flex;
+        height: 29px;
+        width: 29px;
+    }
     .icon-list-custom-button {
         padding: 0 10px !important;
     }
