@@ -36,19 +36,19 @@ document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section');
     const radioBtns = document.querySelectorAll('.btn-check');
   
-    function isInViewport(element) {
+    function isAtLeast70PercentVisible(element) {
       const rect = element.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
+      const threshold = 0.8; 
+      const elementHeight = rect.bottom - rect.top;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const visiblePercentage = (viewportHeight - Math.abs(rect.top)) / elementHeight;
+  
+      return visiblePercentage >= threshold;
     }
   
     function handleScroll() {
       sections.forEach((section, index) => {
-        if (isInViewport(section)) {
+        if (isAtLeast70PercentVisible(section)) {
           radioBtns.forEach((btn) => {
             btn.checked = false;
           });
@@ -59,8 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchmove', handleScroll);
-  });
-  
+});
+
 
 function scrollContainerLeft() {
     document.getElementById('productListContainer').scrollBy({

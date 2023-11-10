@@ -5,7 +5,6 @@
 .pr-1 {
     padding-right: 0px !important;
 }
-
 .line-through {
     text-decoration: line-through;
 }
@@ -13,7 +12,9 @@
 .border-sale {
     border-radius: 20px;
 }
-
+.card-body p {
+    margin-bottom: 5px;
+}
 .border-sale-left {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
