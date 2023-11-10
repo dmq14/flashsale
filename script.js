@@ -4,36 +4,36 @@ const desktopBtns = document.querySelectorAll(".menu-btn .btn-check");
 const sections = document.querySelectorAll("section[id]");
 
 const handleScroll = (index) => {
-  sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
-  lastChecked = index;
+    sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
+    lastChecked = index;
 };
 
 const sectionIds = ["flashsale", "laptopnew", "laptopgaming", "laptopcu", "pc", "maytinhdeban", "manhinh", "linhkien"];
 
 mobileBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    handleScroll(index);
-  });
+    btn.addEventListener("click", () => {
+        handleScroll(index);
+    });
 });
 
 desktopBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    handleScroll(index);
-  });
+    btn.addEventListener("click", () => {
+        handleScroll(index);
+    });
 });
 
 window.addEventListener("scroll", () => {
-  sections.forEach((section, index) => {
-    const top = section.getBoundingClientRect().top;
-    const sectionId = sectionIds[index];
-    if (top >= 0 && top <= window.innerHeight) {
-      mobileBtns[lastChecked].checked = false;
-      mobileBtns[index].checked = true;
-      desktopBtns[lastChecked].checked = false;
-      desktopBtns[index].checked = true;
-      lastChecked = index;
-    }
-  });
+    sections.forEach((section, index) => {
+        const top = section.getBoundingClientRect().top;
+        const sectionId = sectionIds[index];
+        if (top >= 0 && top <= window.innerHeight) {
+            mobileBtns[lastChecked].checked = false;
+            mobileBtns[index].checked = true;
+            desktopBtns[lastChecked].checked = false;
+            desktopBtns[index].checked = true;
+            lastChecked = index;
+        }
+    });
 });
 
 function scrollContainerLeft() {
@@ -582,27 +582,6 @@ function updateCountdown() {
 
 // Cập nhật thời gian mỗi giây
 var x = setInterval(updateCountdown, 1000);
-//underline upcoming and happening
-applyHappeningStyles();
-function applyHappeningStyles() {
-    const happeningButton = document.querySelector('.happening');
-    const upcomingButton = document.querySelector('.upcoming');
-    // Thêm hoặc xóa các thuộc tính cho happening button
-    if (!happeningButton.classList.contains('active')) {
-        happeningButton.classList.add('active');
-        happeningButton.style.position = 'relative'; // Thêm thuộc tính vị trí
-        happeningButton.innerHTML += `<div class="underline"></div>`; // Thêm phần tử div nhấp nháy
-        upcomingButton.classList.remove('active');
-        upcomingButton.style.position = ''; // Xóa thuộc tính vị trí
-        const underline = upcomingButton.querySelector('.underline');
-        if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
-    } else {
-        happeningButton.classList.remove('active');
-        happeningButton.style.position = ''; // Xóa thuộc tính vị trí
-        const underline = happeningButton.querySelector('.underline');
-        if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
-    }
-}
 
 function applyUpcomingStyles() {
     const happeningButton = document.querySelector('.happening');
@@ -619,17 +598,24 @@ function applyUpcomingStyles() {
         if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
     }
 }
+const containers = document.querySelectorAll('.scrollable-list-container');
+const cards = document.querySelectorAll('.icon-list-custom-ul');
 
-const container = document.querySelector('.scrollable-list-container');
-const cards = document.querySelector('.icon-list-custom-ul');
-
-function checkOverflow() {
-    if (cards.scrollWidth > container.clientWidth) {
-        cards.style.justifyContent = 'space-between';
+function checkOverflow(container, card) {
+    if (card.scrollWidth > container.clientWidth) {
+        card.style.justifyContent = 'space-between';
     } else {
-        cards.style.justifyContent = 'center';
+        card.style.justifyContent = 'center';
     }
 }
 
-window.addEventListener('resize', checkOverflow);
-checkOverflow();
+function handleResize(container, card) {
+    window.addEventListener('resize', function () {
+        checkOverflow(container, card);
+    });
+}
+
+containers.forEach((container, index) => {
+    checkOverflow(container, cards[index]);
+    handleResize(container, cards[index]);
+});

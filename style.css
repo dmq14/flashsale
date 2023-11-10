@@ -1,3 +1,7 @@
+#carouselExample {
+    display: none;
+}
+
 .pr-1 {
     padding-right: 0px !important;
 }
@@ -39,11 +43,13 @@
     position: relative;
 
 }
-.btn-more{
+
+.btn-more {
     margin-top: 5px;
     background-color: #ffffff !important;
     width: 200px;
 }
+
 .price {
     color: #ff0000;
     font-weight: bold;
@@ -62,9 +68,17 @@
     height: auto;
 
 }
+
+.main-flash-sale {
+    padding: 1rem !important;
+    background-color: #fd7e14;
+}
+
 .bg-flash-sale {
     background-color: #fda70b;
+
 }
+
 .bg-laptop-new {
     background-color: #fda70b;
 }
@@ -116,6 +130,15 @@
 
 .title-countdown {
     font-size: 18px !important;
+}
+
+button.nav-link {
+    transform: scale(0.9);
+}
+
+.nav-pills .nav-link.active {
+    transform: scale(1);
+
 }
 
 .time-end-flashSale {
@@ -219,7 +242,7 @@ span#minutes::before {
     display: flex;
     overflow-x: scroll;
     width: 100%;
-    padding: 4px;
+
 }
 
 .product-sale {
@@ -348,6 +371,7 @@ span#minutes::before {
 .nav-pills .nav-link.active {
     background-color: rgb(252 249 7 / 84%) !important;
 }
+
 .cus-label {
     height: 60px !important;
     width: 70px !important;
@@ -362,9 +386,11 @@ span#minutes::before {
     align-items: center;
 
 }
-.menu-btn-mobile{
+
+.menu-btn-mobile {
     display: none;
 }
+
 @media screen and (max-width:1024px) {
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-960-120.gif")no-repeat;
@@ -398,23 +424,44 @@ span#minutes::before {
 }
 
 @media screen and (max-width:768px) {
+    #carouselExample {
+        display: block;
+    }
+
+    .img-fluid {
+        display: none;
+    }
+
+    #carouselExampleInterval {
+        display: none;
+    }
+
+    #pills-tab {
+        margin-top: 18px !important;
+    }
+
     .product {
         flex: 0 0 110px;
         margin-right: 3px;
     }
+
     .product-sale {
         flex: 0 0 110px !important;
         margin-right: 3px !important;
     }
+
     .prd-name {
         font-size: 12px;
     }
-    .card-body p{
-        margin-bottom: 5px ;
+
+    .card-body p {
+        margin-bottom: 5px;
     }
-    .product-left{
+
+    .product-left {
         font-size: 14px !important;
     }
+
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-720-200.gif");
         height: 190px;
@@ -440,20 +487,24 @@ span#minutes::before {
     span.badge {
         font-size: 17px;
     }
-    .mb-mg{
+
+    .mb-mg {
         margin-top: 60px;
     }
-    .menu-btn{
+
+    .menu-btn {
         display: none;
     }
-    .menu-btn-mobile{
+
+    .menu-btn-mobile {
         display: flex;
-        max-width:100%;
+        max-width: 100%;
         background-color: #ffffff;
         position: fixed;
         top: 0px;
         z-index: 22;
     }
+
     .cus-label-mobile {
         height: 50px !important;
         width: 130px !important;
@@ -461,10 +512,12 @@ span#minutes::before {
         display: flex !important;
         align-items: center;
     }
+
     .custom-btn-gr-mobile label {
         font-size: 14px;
     }
-    .custom-btn-gr-mobile{
+
+    .custom-btn-gr-mobile {
         max-width: 100%;
         position: relative;
         z-index: 3;
@@ -485,6 +538,19 @@ span#minutes::before {
         height: 160px;
     }
 
+    #pills-tab {
+        margin-top: 7px !important;
+    }
+
+    button.nav-link {
+        transform: scale(0.6);
+    }
+
+    .nav-pills .nav-link.active {
+        transform: scale(0.8);
+
+    }
+
     .listing-timeline {
 
         margin-top: 10px;
@@ -496,5 +562,25 @@ span#minutes::before {
 
     span.badge {
         font-size: 16px;
+    }
+}
+
+@media screen and (max-width:327px) {
+
+    #pills-tab {
+        margin-top: 0 !important;
+    }
+
+    .nav-item {
+        width: 100px;
+    }
+
+    button.nav-link {
+        transform: scale(0.4);
+    }
+
+    .nav-pills .nav-link.active {
+        transform: scale(0.6);
+
     }
 }
