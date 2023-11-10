@@ -107,6 +107,22 @@
     background-color: #0E1727;
 }
 
+button.nav-link {
+    width: 140px;
+    height: 75px;
+    background-color: #85858524;
+}
+
+button.custom-font-btn {
+    width: auto;
+    height: auto;
+}
+
+button.custom-font-btn-white {
+    width: auto;
+    height: auto;
+}
+
 .menu-btn {
     position: fixed;
     top: 50%;
@@ -424,6 +440,32 @@ span#minutes::before {
 }
 
 @media screen and (max-width:768px) {
+
+    .bg-laptop-new.p-3.border-bottom,
+    .bg-laptop-cu.p-3.border-bottom,
+    .bg-pc-theo-nhu-cau.p-3.border-bottom,
+    .bg-pc.p-3.border-bottom,
+    .bg-man-hinh.p-3.border-bottom,
+    .bg-phu-kien.p-3.border-bottom {
+        padding-top: 2px !important;
+    }
+
+
+    .icon-list-custom-button {
+        padding: 0 10px !important;
+    }
+
+    /* .nav-link.border-btn {
+        padding: 0 10px !important;
+    } */
+    .custom-padding-btn {
+        padding: 2px 10px !important;
+    }
+
+    .icon-list-custom-image {
+        max-width: 80px !important;
+    }
+
     #carouselExample {
         display: block;
     }
@@ -436,8 +478,8 @@ span#minutes::before {
         display: none;
     }
 
-    #pills-tab {
-        margin-top: 18px !important;
+    .nav.nav-pills.mb-3.mt-auto.justify-content-around {
+        margin-top: 7px !important;
     }
 
     .product {
@@ -538,12 +580,22 @@ span#minutes::before {
         height: 160px;
     }
 
-    #pills-tab {
+    .nav.nav-pills.mb-3.mt-auto.justify-content-around {
         margin-top: 7px !important;
     }
 
     button.nav-link {
-        transform: scale(0.6);
+        transform: scale(0.9);
+        background-color: #fff;
+        width: 100px;
+        height: 40px;
+    }
+
+    #pills-home-tab {
+        transform: scale(0.9);
+        background-color: #fff;
+        width: 100px;
+        height: 40px;
     }
 
     .nav-pills .nav-link.active {
@@ -563,14 +615,20 @@ span#minutes::before {
     span.badge {
         font-size: 16px;
     }
+
+    .icon-list-custom-image {}
+
+
+    .custom-font-btn {
+        font-size: small !important;
+    }
+
+    .custom-font-btn-white {
+        font-size: small !important;
+    }
 }
 
 @media screen and (max-width:327px) {
-
-    #pills-tab {
-        margin-top: 0 !important;
-    }
-
     .nav-item {
         width: 100px;
     }
