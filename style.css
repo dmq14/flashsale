@@ -284,8 +284,8 @@ span#minutes::before {
 
     z-index: 3;
     display: flex;
-    top: 55%;
-    width: 98%;
+    top: 50%;
+    width: 100%;
     position: absolute;
     transform: translateY(-50%);
     height: 60px;

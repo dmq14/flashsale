@@ -37,14 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const radioBtns = document.querySelectorAll('.btn-check');
   
     function isAtLeast70PercentVisible(element) {
-      const rect = element.getBoundingClientRect();
-      const threshold = 0.6; 
-      const elementHeight = rect.bottom - rect.top;
-      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-      const visiblePercentage = (viewportHeight - Math.abs(rect.top)) / elementHeight;
-  
-      return visiblePercentage >= threshold;
-    }
+        const rect = element.getBoundingClientRect();
+        let threshold;
+      
+        if (window.innerWidth <= 768) {
+          threshold = 0.70;
+        } else {
+          threshold = 1;
+        }
+      
+        const elementHeight = rect.bottom - rect.top;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+        const visiblePercentage = (viewportHeight - Math.abs(rect.top)) / elementHeight;
+      
+        return visiblePercentage >= threshold;
+      }
   
     function handleScroll() {
       sections.forEach((section, index) => {
