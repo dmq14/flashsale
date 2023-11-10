@@ -42,7 +42,7 @@
 .btn-more{
     margin-top: 5px;
     background-color: #ffffff !important;
-    width: 20%;
+    width: 200px;
 }
 .price {
     color: #ff0000;
@@ -62,7 +62,9 @@
     height: auto;
 
 }
-
+.bg-flash-sale {
+    background-color: #fda70b;
+}
 .bg-laptop-new {
     background-color: #fda70b;
 }
@@ -396,6 +398,23 @@ span#minutes::before {
 }
 
 @media screen and (max-width:768px) {
+    .product {
+        flex: 0 0 110px;
+        margin-right: 3px;
+    }
+    .product-sale {
+        flex: 0 0 110px !important;
+        margin-right: 3px !important;
+    }
+    .prd-name {
+        font-size: 12px;
+    }
+    .card-body p{
+        margin-bottom: 5px ;
+    }
+    .product-left{
+        font-size: 14px !important;
+    }
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-720-200.gif");
         height: 190px;
