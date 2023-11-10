@@ -1,14 +1,12 @@
 let lastChecked = 0;
 const mobileBtns = document.querySelectorAll(".menu-btn-mobile .btn-check");
 const desktopBtns = document.querySelectorAll(".menu-btn .btn-check");
-const sections = document.querySelectorAll("section[id]");
+const sections = document.querySelectorAll("section");
 
 const handleScroll = (index) => {
     sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
     lastChecked = index;
 };
-
-const sectionIds = ["flashsale", "laptopnew", "laptopgaming", "laptopcu", "pc", "maytinhdeban", "manhinh", "linhkien"];
 
 mobileBtns.forEach((btn, index) => {
     btn.addEventListener("click", () => {
@@ -25,7 +23,6 @@ desktopBtns.forEach((btn, index) => {
 window.addEventListener("scroll", () => {
     sections.forEach((section, index) => {
         const top = section.getBoundingClientRect().top;
-        const sectionId = sectionIds[index];
         if (top >= 0 && top <= window.innerHeight) {
             mobileBtns[lastChecked].checked = false;
             mobileBtns[index].checked = true;
@@ -34,6 +31,33 @@ window.addEventListener("scroll", () => {
             lastChecked = index;
         }
     });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const sections = document.querySelectorAll('section');
+    const radioBtns = document.querySelectorAll('.btn-check');
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function handleScroll() {
+        sections.forEach((section, index) => {
+            if (isInViewport(section)) {
+                radioBtns.forEach((btn) => {
+                    btn.checked = false;
+                });
+                radioBtns[index].checked = true;
+            }
+        });
+    }
+
+    window.addEventListener('scroll', handleScroll);
 });
 
 function scrollContainerLeft() {
