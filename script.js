@@ -1,24 +1,41 @@
 let lastChecked = 0;
-const btns = document.querySelectorAll(".btn-check");
-const sections = document.querySelectorAll("section");
+const mobileBtns = document.querySelectorAll(".menu-btn-mobile .btn-check");
+const desktopBtns = document.querySelectorAll(".menu-btn .btn-check");
+const sections = document.querySelectorAll("section[id]");
 
-btns.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        sections[index].scrollIntoView({ behavior: "smooth" });
-        lastChecked = index;
-    });
+const handleScroll = (index) => {
+  sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
+  lastChecked = index;
+};
+
+const sectionIds = ["flashsale", "laptopnew", "laptopgaming", "laptopcu", "pc", "maytinhdeban", "manhinh", "linhkien"];
+
+mobileBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    handleScroll(index);
+  });
+});
+
+desktopBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    handleScroll(index);
+  });
 });
 
 window.addEventListener("scroll", () => {
-    sections.forEach((section, index) => {
-        const top = section.getBoundingClientRect().top;
-        if (top >= 0 && top <= window.innerHeight) {
-            btns[lastChecked].checked = false;
-            btns[index].checked = true;
-            lastChecked = index;
-        }
-    });
+  sections.forEach((section, index) => {
+    const top = section.getBoundingClientRect().top;
+    const sectionId = sectionIds[index];
+    if (top >= 0 && top <= window.innerHeight) {
+      mobileBtns[lastChecked].checked = false;
+      mobileBtns[index].checked = true;
+      desktopBtns[lastChecked].checked = false;
+      desktopBtns[index].checked = true;
+      lastChecked = index;
+    }
+  });
 });
+
 function scrollContainerLeft() {
     document.getElementById('productListContainer').scrollBy({
         left: -500,
