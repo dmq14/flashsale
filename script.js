@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     function isAtLeast70PercentVisible(element) {
       const rect = element.getBoundingClientRect();
-      const threshold = 0.8; 
+      const threshold = 0.6; 
       const elementHeight = rect.bottom - rect.top;
       const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
       const visiblePercentage = (viewportHeight - Math.abs(rect.top)) / elementHeight;
