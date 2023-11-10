@@ -5,6 +5,7 @@
 .pr-1 {
     padding-right: 0px !important;
 }
+
 .line-through {
     text-decoration: line-through;
 }
@@ -12,9 +13,11 @@
 .border-sale {
     border-radius: 20px;
 }
+
 .card-body p {
     margin-bottom: 5px;
 }
+
 .border-sale-left {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -408,10 +411,57 @@ span#minutes::before {
     display: none;
 }
 
+h3.title-countdown {
+    font-size: 15px !important;
+}
+
 @media screen and (max-width:1024px) {
+
+    .bg-laptop-new.p-3.border-bottom,
+    .bg-laptop-cu.p-3.border-bottom,
+    .bg-pc-theo-nhu-cau.p-3.border-bottom,
+    .bg-pc.p-3.border-bottom,
+    .bg-man-hinh.p-3.border-bottom,
+    .bg-phu-kien.p-3.border-bottom {
+        padding-top: 2px !important;
+    }
+
+
+    .icon-list-custom-button {
+        padding: 0 10px !important;
+    }
+
+    button.nav-link {
+        width: 130px;
+        height: 65px;
+        background-color: #85858524;
+    }
+
+    .icon-list-custom-image {
+        max-width: 100px !important;
+    }
+
+    button.custom-font-btn {
+        width: auto;
+        height: auto;
+    }
+
+    button.custom-font-btn-white {
+        width: auto;
+        height: auto;
+    }
+
+    h3.title-countdown {
+        font-size: 13px !important;
+    }
+
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-960-120.gif")no-repeat;
-        padding-left: 45%;
+        padding-left: 40%;
+    }
+
+    button#pills-home-tab {
+        justify-content: center;
     }
 
     .title-countdown {
@@ -448,7 +498,7 @@ span#minutes::before {
     .bg-pc.p-3.border-bottom,
     .bg-man-hinh.p-3.border-bottom,
     .bg-phu-kien.p-3.border-bottom {
-        padding-top: 2px !important;
+        padding-top: 5px !important;
     }
 
 
@@ -465,6 +515,36 @@ span#minutes::before {
 
     .icon-list-custom-image {
         max-width: 80px !important;
+    }
+
+    button.nav-link {
+        width: 120px;
+        height: 55px;
+
+    }
+
+    .icon-list-custom-image {
+        max-width: 90px !important;
+    }
+
+    button.custom-font-btn {
+        width: auto;
+        height: auto;
+    }
+
+    button.custom-font-btn-white {
+        width: auto;
+        height: auto;
+    }
+
+    h3.title-countdown {
+        font-size: 12px !important;
+    }
+
+    .custom-btn-time {
+        margin-top: 15px;
+        height: 70px !important;
+        width: 150px !important;
     }
 
     #carouselExample {
@@ -576,6 +656,12 @@ span#minutes::before {
 }
 
 @media screen and (max-width:480px) {
+    .custom-btn-time {
+        margin-top: 0;
+        height: 70px !important;
+        width: 150px !important;
+    }
+
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-480-200.gif");
         height: 160px;
@@ -587,14 +673,14 @@ span#minutes::before {
 
     button.nav-link {
         transform: scale(0.9);
-        background-color: #fff;
+        background-color: #8585854a;
         width: 100px;
         height: 40px;
     }
 
     #pills-home-tab {
         transform: scale(0.9);
-        background-color: #fff;
+        background-color: #8585854a;
         width: 100px;
         height: 40px;
     }
@@ -617,8 +703,6 @@ span#minutes::before {
         font-size: 16px;
     }
 
-    .icon-list-custom-image {}
-
 
     .custom-font-btn {
         font-size: small !important;
@@ -627,15 +711,56 @@ span#minutes::before {
     .custom-font-btn-white {
         font-size: small !important;
     }
+
+    button.custom-font-btn {
+        width: auto !important;
+        height: auto !important;
+    }
+
+    button.custom-font-btn-white {
+        display: block;
+        max-width: 90px !important;
+        height: 120px !important;
+    }
 }
 
 @media screen and (max-width:327px) {
+    .custom-btn-time {
+        margin-top: 0;
+        height: 50px !important;
+        width: 100px !important;
+        font-size: 10px !important;
+    }
+
+    h3.title-countdown {
+        font-size: 8px !important;
+    }
+
+    span.badge.bg-dark {
+        font-size: 10px;
+    }
+
+    button.custom-font-btn {
+        width: auto;
+        height: auto;
+    }
+
+    button.custom-font-btn-white {
+        width: auto;
+        height: auto;
+    }
+
     .nav-item {
         width: 100px;
     }
 
     button.nav-link {
-        transform: scale(0.4);
+        transform: scale(0.6);
+    }
+
+    #pills-home-tab {
+        transform: scale(0.6);
+
     }
 
     .nav-pills .nav-link.active {
