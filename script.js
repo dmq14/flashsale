@@ -4,67 +4,67 @@ const desktopBtns = document.querySelectorAll(".menu-btn .btn-check");
 const sections = document.querySelectorAll("section");
 
 const handleScroll = (index) => {
-  sections[index].scrollIntoView({ behavior: "smooth" });
-  lastChecked = index;
+    sections[index].scrollIntoView({ behavior: "smooth" });
+    lastChecked = index;
 };
 
 mobileBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    handleScroll(index);
-  });
+    btn.addEventListener("click", () => {
+        handleScroll(index);
+    });
 });
 
 desktopBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    handleScroll(index);
-  });
+    btn.addEventListener("click", () => {
+        handleScroll(index);
+    });
 });
 
 window.addEventListener("scroll", () => {
-  sections.forEach((section, index) => {
-    const top = section.getBoundingClientRect().top;
-    if (top >= 0 && top <= window.innerHeight) {
-        if (window.innerWidth > 768) {
-            desktopBtns[lastChecked].checked = false;
-            desktopBtns[index].checked = true;
-            lastChecked = index;
-          }
-      
-    }
-  });
+    sections.forEach((section, index) => {
+        const top = section.getBoundingClientRect().top;
+        if (top >= 0 && top <= window.innerHeight) {
+            if (window.innerWidth > 768) {
+                desktopBtns[lastChecked].checked = false;
+                desktopBtns[index].checked = true;
+                lastChecked = index;
+            }
+
+        }
+    });
 });
 document.addEventListener('DOMContentLoaded', function () {
     const sections = document.querySelectorAll('section');
     const radioBtns = document.querySelectorAll('.btn-check');
-  
+
     function isAtLeast70PercentVisible(element) {
         const rect = element.getBoundingClientRect();
         let threshold;
-      
+
         if (window.innerWidth <= 768) {
-          threshold = 0.70;
+            threshold = 0.70;
         } else {
-          threshold = 1;
+            threshold = 1;
         }
-      
+
         const elementHeight = rect.bottom - rect.top;
         const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
         const visiblePercentage = (viewportHeight - Math.abs(rect.top)) / elementHeight;
-      
+
         return visiblePercentage >= threshold;
-      }
-  
-    function handleScroll() {
-      sections.forEach((section, index) => {
-        if (isAtLeast70PercentVisible(section)) {
-          radioBtns.forEach((btn) => {
-            btn.checked = false;
-          });
-          radioBtns[index].checked = true;
-        }
-      });
     }
-  
+
+    function handleScroll() {
+        sections.forEach((section, index) => {
+            if (isAtLeast70PercentVisible(section)) {
+                radioBtns.forEach((btn) => {
+                    btn.checked = false;
+                });
+                radioBtns[index].checked = true;
+            }
+        });
+    }
+
     window.addEventListener('scroll', handleScroll);
     window.addEventListener('touchmove', handleScroll);
 });
@@ -617,21 +617,6 @@ function updateCountdown() {
 // Cập nhật thời gian mỗi giây
 var x = setInterval(updateCountdown, 1000);
 
-function applyUpcomingStyles() {
-    const happeningButton = document.querySelector('.happening');
-    const upcomingButton = document.querySelector('.upcoming');
-
-
-    if (!upcomingButton.classList.contains('active')) {
-        upcomingButton.classList.add('active');
-        upcomingButton.style.position = 'relative'; 
-        upcomingButton.innerHTML += `<div class="underline"></div>`; 
-        happeningButton.classList.remove('active');
-        happeningButton.style.position = ''; 
-        const underline = happeningButton.querySelector('.underline');
-        if (underline) underline.remove(); 
-    }
-}
 const containers = document.querySelectorAll('.scrollable-list-container');
 const cards = document.querySelectorAll('.icon-list-custom-ul');
 

@@ -12,15 +12,20 @@
 
 .border-sale {
     border-radius: 20px;
+    background-color: #c3c3c37a;
 }
 
 .card-body p {
     margin-bottom: 5px;
+
 }
 
 .border-sale-left {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    background-color: #ffa500;
+    width: 80%;
+    border-radius: 15px;
 }
 
 .border-btn {
@@ -502,11 +507,13 @@ h3.title-countdown {
         padding-top: 5px !important;
     }
 
-    .btn-scroll-x, .btn-scroll-prd {
+    .btn-scroll-x,
+    .btn-scroll-prd {
         display: flex;
         height: 29px;
         width: 29px;
     }
+
     .icon-list-custom-button {
         padding: 0 10px !important;
     }

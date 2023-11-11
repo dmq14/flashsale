@@ -1,140 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-  </head>
-  <style>
-    .bo {
-      height: 360px;
-      width: 280px;
-    }
-    .bo-title {
-      height: 22%;
-    }
-    .bo-title p {
-      color: #ffffff;
-      font-size: 13px;
-      margin-bottom: 0px;
-    }
-    .bo-content {
-      height: 78%;
-      background-color: #ffffff;
-    }
-    .bo-content p {
-      color: #000000;
-      font-size: 14px;
-      margin-bottom: 0px;
-    }
-    .bo-content-note {
-      font-size: 10px !important;
-    }
-    .bo-content-title {
-      font-weight: bold;
-    }
-    .line-through {
-      text-decoration: line-through;
-    }
-    .bo-price {
-      color: #ffee00 !important;
-      font-size: 20px !important;
-      font-weight: bold;
-    }
-    .list-km {
-      font-size: 14px;
-    }
-    .list-km li {
-      border: none;
-      padding: 0px;
-    }
-    .sp-size {
-      font-size: 9px;
-    }
-    .fs{
-        font-size: 13px;
-    }
 
-  </style>
-  <body>
-    <div style="height: 50px"></div>
-    <div class="container col-md-12">
-      <div class="row">
-        <div class="col-md-4 bg-info"></div>
-        <div class="col-md-4 bg-body-secondary"></div>
-        <div class="col-md-4">
-          <div class="container-fluid bo bg-danger rounded p-2">
-            <div class="bo-title col-md-12">
-              <div class="row">
-                <div class="col-md-7">
-                  <p class="">Mua ngay với ưu đãi sốc!</p>
-                  <p class="bo-price">10.000.000₫</p>
-                  <div class="d-flex align-items-center">
-                    <p class="line-through me-2">20.000.000đ</p>
-                    <p class="percent float-left percent">-25%</p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+<style>
+  .bo {
+    height: 360px;
+    width: 280px;
+  }
+
+  .bo-title {
+    height: 22%;
+  }
+
+  .bo-title p {
+    color: #ffffff;
+    font-size: 13px;
+    margin-bottom: 0px;
+  }
+
+  .bo-content {
+    height: 78%;
+    background-color: #ffffff;
+  }
+
+  .bo-content p {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  .bo-content-note {
+    font-size: 10px !important;
+  }
+
+  .bo-content-title {
+    font-weight: bold;
+  }
+
+  .line-through {
+    text-decoration: line-through;
+  }
+
+  .bo-price {
+
+    font-size: 20px !important;
+    font-weight: bold;
+  }
+
+  .list-km {
+    font-size: 14px;
+  }
+
+  .list-km li {
+    border: none;
+    padding: 0px;
+  }
+
+  .sp-size {
+    font-size: 9px;
+  }
+
+  .fs {
+    font-size: 13px;
+  }
+
+  .title-countdown {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 2px;
+    color: white;
+  }
+
+  span#seconds::before,
+  span#minutes::before {
+    content: ":";
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    position: relative;
+    opacity: 0.7;
+    animation: rgb(29, 28, 28) 1.5s ease-in-out infinite;
+    right: 9px;
+    color: white;
+  }
+
+  .count-down {
+    font-size: 11px;
+    color: black;
+    margin: 3px;
+    padding: 4px 4px 4px 3px;
+  }
+
+  .time-end {
+    display: flex;
+  }
+
+  .product-left {
+    font-size: 9px !important;
+    padding-left: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-weight: 600;
+    color: rgb(255, 255, 255) !important;
+  }
+
+  .border-sale {
+    height: 14px;
+    border-radius: 10px;
+  }
+
+  .border-sale-left {
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+  }
+</style>
+<script>
+  function updateCountdown() {
+    var now = new Date();
+    var midnight = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate() + 1, // Ngày tiếp theo
+      0, 0, 0 // 12h đêm
+    );
+    var timeUntilMidnight = midnight - now;
+
+    var hours = Math.floor(timeUntilMidnight / (1000 * 60 * 60));
+    var minutes = Math.floor((timeUntilMidnight % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeUntilMidnight % (1000 * 60)) / 1000);
+
+    hours = hours.toString().padStart(2, '0'); // Format giờ thành số kép
+    minutes = minutes.toString().padStart(2, '0'); // Format phút thành số kép
+    seconds = seconds.toString().padStart(2, '0'); // Format giây thành số kép
+
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // Cập nhật lại thời gian đến 12h đêm sau khi đếm ngược kết thúc
+    if (timeUntilMidnight <= 0) {
+      updateCountdown();
+    }
+  }
+
+  // Cập nhật thời gian mỗi giây
+  var x = setInterval(updateCountdown, 1000);
+</script>
+
+<body>
+  <div style="height: 50px"></div>
+  <div class="container col-md-12">
+    <div class="row">
+      <div class="col-md-4 bg-info"></div>
+      <div class="col-md-4 bg-body-secondary"></div>
+      <div class="col-md-4">
+        <div class="container-fluid bo  rounded p-2 " style="background-color: #eab142">
+          <div class="bo-title col-md-12">
+            <div class="row justify-content-around">
+              <div class="col-7">
+                <p class="text-dark">Mua ngay với giá sốc!</p>
+                <p class="bo-price text-danger">10.000.000₫</p>
+                <div class="d-flex align-items-center">
+                  <p class="line-through me-2 text-dark">20.000.000đ</p>
+                  <p class="percent float-left percent text-dark">-25%</p>
+                </div>
+              </div>
+              <div class="col-5 p-1 d-inline-block col-2  mt-auto mb-auto ">
+                <h3 class="title-countdown text-dark">KẾT THÚC TRONG</h3>
+                <div class="time-end justify-content-center">
+                  <span class="badge count-down btn btn-light" id="hours"></span>
+                  <span class="badge count-down btn btn-light" id="minutes"></span>
+                  <span class="badge count-down btn btn-light" id="seconds"></span>
+                </div>
+                <div class="bg-light border-sale  m-2">
+                  <div class="border-sale-left " style="background-color: #dc3545; width: 80%">
+                    <img width="auto" height="100%" src="icon-hang-laptop/lightning-icon.png" alt="icon flashsale" />
+                    <p class="product-left">Còn 26/30</p>
                   </div>
                 </div>
-                <div class="col-md-5"></div>
               </div>
             </div>
-            <div class="bo-content rounded p-1 ">
-              <div>
-                <p class="bo-content-title">Khuyến mãi:</p>
-                <p class="bo-content-note">
-                  *Khuyến mãi có thể kết thúc sớm hơn.
-                </p>
-                <ul class="list-group list-km">
-                  <li class="list-group-item">
-                    <span class="badge bg-primary rounded-pill sp-size">1</span>
-                    Tặng balo/ túi chống sóc/ chuột.
-                  </li>
-                  <li class="list-group-item">
-                    <span class="badge bg-primary rounded-pill sp-size">2</span>
-                    Giao hàng miễn phí trong vòng 2 giờ tại TP Hồ Chí Minh.
-                  </li>
-                  <li class="list-group-item">
-                    <span class="badge bg-primary rounded-pill sp-size">3</span>
-                    Hỗ trợ cài đặt phần mềm miễn phí.
-                  </li>
-                  <li class="list-group-item">
-                    <span class="badge bg-primary rounded-pill sp-size">4</span>
-                    Tặng voucher giảm 300k (thời gian sử dụng: 24 tháng) dành
-                    cho hóa đơn trên 5 triệu đồng tại Khóa Vàng.
-                  </li>
-                </ul>
+          </div>
+          <div class="bo-content rounded p-1 ">
+            <div>
+              <p class="bo-content-title">Khuyến mãi:</p>
+              <p class="bo-content-note">
+                *Khuyến mãi có thể kết thúc sớm hơn.
+              </p>
+              <ul class="list-group list-km">
+                <li class="list-group-item">
+                  <span class="badge  rounded-pill sp-size" style="background-color: #eab142;">1</span>
+                  Tặng balo/ túi chống sóc/ chuột.
+                </li>
+                <li class="list-group-item">
+                  <span class="badge rounded-pill sp-size" style="background-color: #eab142;">2</span>
+                  Giao hàng miễn phí trong vòng 2 giờ tại TP Hồ Chí Minh.
+                </li>
+                <li class="list-group-item">
+                  <span class="badge  rounded-pill sp-size" style="background-color: #eab142;">3</span>
+                  Hỗ trợ cài đặt phần mềm miễn phí.
+                </li>
+                <li class="list-group-item">
+                  <span class="badge rounded-pill sp-size" style="background-color: #eab142;">4</span>
+                  Tặng voucher giảm 300k (thời gian sử dụng: 24 tháng) dành
+                  cho hóa đơn trên 5 triệu đồng tại Khóa Vàng.
+                </li>
+              </ul>
+            </div>
+            <div class="p-1">
+              <a type="button" class="btn btn-danger w-100 p-1  ">MUA NGAY GIÁ SỐC 10.000.000₫</a>
+            </div>
+            <div class="d-flex justify-content-between ">
+              <div class="p-1 w-100">
+                <a type="button" class="btn  p-1 w-100 rounded fs" style="background-color: #eab142;">Mua trả góp</a>
               </div>
-              <div class="p-1">
-                <a type="button" class="btn btn-danger w-100 p-1  "
-                  >Mua ngay với giá 10.000.000₫</a
-                >
-              </div>
-              <div class="d-flex justify-content-between ">
-                <div class="p-1 w-100">
-                  <a type="button" class="btn btn-warning p-1 w-100 rounded fs"
-                    >Mua trả góp</a
-                  >
-                </div>
-                <div class="p-1 w-100">
-                  <a type="button" class="btn btn-warning p-1 w-100 rounded fs"
-                    >Liên hệ tư vấn</a
-                  >
-                </div>
+              <div class="p-1 w-100">
+                <a type="button" class="btn  p-1 w-100 rounded fs" style="background-color: #eab142;">Liên hệ tư vấn</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"
-      ></script>
     </div>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"></script>
+  </div>
+</body>
+
 </html>
