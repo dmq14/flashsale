@@ -1,16 +1,18 @@
 #carouselExample {
     display: none;
 }
-.container
-.pr-1 {
+
+.container .pr-1 {
     padding-right: 0px !important;
 }
-.product-left{
-    position: absolute ;
-    left: 36% ;
+
+.product-left {
+    position: absolute;
+    left: 36%;
     font-size: 19px;
-    
+
 }
+
 .line-through {
     text-decoration: line-through;
 }
@@ -37,9 +39,11 @@
     border-radius: 50px !important;
 
 }
-.border-full{
+
+.border-full {
     border-radius: 15px;
 }
+
 .border-bottom {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -223,6 +227,22 @@ button.nav-link {
         opacity: 1;
     }
 }
+
+.filters-product {
+    margin: 5px;
+}
+
+.custom-filters-btn {
+    border: none !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+}
+
+.btn-white {
+    color: snow !important;
+}
+
+
 
 span#seconds::before,
 span#minutes::before {
@@ -427,11 +447,18 @@ span#minutes::before {
 h3.title-countdown {
     font-size: 15px !important;
 }
-@media (min-width: 1200px){
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
         max-width: 1100px !important;
     }
 }
+
 @media screen and (max-width:1024px) {
 
     .bg-laptop-new.p-3.border-bottom,
@@ -525,6 +552,12 @@ h3.title-countdown {
         width: 29px;
     }
 
+    .custom-filters-btn {
+
+        font-size: 15px !important;
+        font-weight: 400 !important;
+    }
+
     .icon-list-custom-button {
         padding: 0 10px !important;
     }
@@ -608,9 +641,11 @@ h3.title-countdown {
         font-size: 14px !important;
 
     }
-    .lightning-icon{
+
+    .lightning-icon {
         height: 23px !important;
     }
+
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-720-200.gif");
         height: 190px;
@@ -709,6 +744,12 @@ h3.title-countdown {
         background-color: #8585854a;
         width: 100px;
         height: 40px;
+    }
+
+    .custom-filters-btn {
+
+        font-size: 12px !important;
+
     }
 
     .nav-pills .nav-link.active {
