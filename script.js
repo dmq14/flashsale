@@ -24,11 +24,12 @@ window.addEventListener("scroll", () => {
   sections.forEach((section, index) => {
     const top = section.getBoundingClientRect().top;
     if (top >= 0 && top <= window.innerHeight) {
-      mobileBtns[lastChecked].checked = false;
-      mobileBtns[index].checked = true;
-      desktopBtns[lastChecked].checked = false;
-      desktopBtns[index].checked = true;
-      lastChecked = index;
+        if (window.innerWidth > 768) {
+            desktopBtns[lastChecked].checked = false;
+            desktopBtns[index].checked = true;
+            lastChecked = index;
+          }
+      
     }
   });
 });
@@ -620,15 +621,15 @@ function applyUpcomingStyles() {
     const happeningButton = document.querySelector('.happening');
     const upcomingButton = document.querySelector('.upcoming');
 
-    // Thêm hoặc xóa các thuộc tính cho upcoming button
+
     if (!upcomingButton.classList.contains('active')) {
         upcomingButton.classList.add('active');
-        upcomingButton.style.position = 'relative'; // Thêm thuộc tính vị trí
-        upcomingButton.innerHTML += `<div class="underline"></div>`; // Thêm phần tử div nhấp nháy
+        upcomingButton.style.position = 'relative'; 
+        upcomingButton.innerHTML += `<div class="underline"></div>`; 
         happeningButton.classList.remove('active');
-        happeningButton.style.position = ''; // Xóa thuộc tính vị trí
+        happeningButton.style.position = ''; 
         const underline = happeningButton.querySelector('.underline');
-        if (underline) underline.remove(); // Xóa phần tử div nhấp nháy
+        if (underline) underline.remove(); 
     }
 }
 const containers = document.querySelectorAll('.scrollable-list-container');
