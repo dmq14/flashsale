@@ -5,7 +5,11 @@
 .pr-1 {
     padding-right: 0px !important;
 }
-
+.product-left{
+    position: absolute ;
+    left: 36% ;
+    font-size: 19px;
+}
 .line-through {
     text-decoration: line-through;
 }
@@ -32,7 +36,9 @@
     border-radius: 50px !important;
 
 }
-
+.border-full{
+    border-radius: 15px;
+}
 .border-bottom {
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -595,8 +601,12 @@ h3.title-countdown {
 
     .product-left {
         font-size: 14px !important;
-    }
 
+    }
+    .border-sale p{
+        position: absolute !important;
+        left: 36% !important;
+    }
     .title-flash-sale {
         background: url("image-flash-sale/flash-sale-720-200.gif");
         height: 190px;

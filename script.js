@@ -69,7 +69,15 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener('touchmove', handleScroll);
 });
 
-
+document.getElementById('toggleButton').addEventListener('click', function () {
+    var buttonText = this.innerHTML.trim();
+    if (buttonText === 'Xem thêm') {
+      this.innerHTML = 'Thu gọn';
+    } else {
+      this.innerHTML = 'Xem thêm';
+    }
+  });
+  
 function scrollContainerLeft() {
     document.getElementById('productListContainer').scrollBy({
         left: -500,
