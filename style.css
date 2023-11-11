@@ -411,6 +411,7 @@ span#minutes::before {
     overflow-x: auto !important;
     justify-content: center;
     display: flex;
+    overflow-y: hidden !important;
     align-items: center;
 }
 
