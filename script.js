@@ -23,12 +23,10 @@ desktopBtns.forEach((btn, index) => {
 window.addEventListener("scroll", () => {
     sections.forEach((section, index) => {
         const top = section.getBoundingClientRect().top;
-        if (top >= 0 && top <= window.innerHeight) {
-            if (window.innerWidth > 768) {
+        if (top >= 0 && top <= window.innerHeight && window.innerWidth > 768) {
                 desktopBtns[lastChecked].checked = false;
                 desktopBtns[index].checked = true;
                 lastChecked = index;
-            }
 
         }
     });
