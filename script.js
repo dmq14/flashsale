@@ -38,7 +38,7 @@ function initializeScrollAndCheck(buttonSelector, sectionSelector, scrollContain
                 }
             }
         });
-    }, { threshold: 0.63 });
+    }, { threshold: 0.53 });
 
     sections.forEach(section => {
         observer.observe(section);
