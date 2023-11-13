@@ -12,7 +12,7 @@
   <meta property="og:url" content="khoavang.vn/flash-sale" />
   <meta property="og:title" content="Flash Sale Khoá Vàng - Mua laptop, PC, linh - phụ kiện ưu đãi giảm đến 50%" />
   <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
@@ -109,44 +109,27 @@
   </div>
   <div class="menu-btn-mobile">
     <div class="btn-group custom-btn-gr-mobile" role="group" aria-label="Basic radio toggle button group">
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio1">Flash Sale</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio2">Laptop New</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio3">Laptop Gaming</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio4">Laptop cũ</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio5" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio5">PC theo nhu cầu</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio6" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio6">Máy tính đề bàn</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio8" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio8">Màn hình</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio9" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio9">Linh/phụ kiện</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio1" data-target="flashsale">Flash Sale</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio2" data-target="laptopnew">Laptop New</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio3" data-target="laptopgaming">Laptop Gaming</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio4" data-target="laptopcu">Laptop cũ</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio5" data-target="pc">PC theo nhu cầu</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio6" data-target="maytinhdeban">Máy tính đề bàn</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio8" data-target="manhinh">Màn hình</label>
+        <label class="btn btn-outline-danger cus-label-mobile" for="vbtn-radio9" data-target="linhkien">Linh/phụ kiện</label>
     </div>
-  </div>
+</div>
   <div class="menu-btn">
     <div class="btn-group-vertical custom-btn-gr" role="group" aria-label="Vertical radio toggle button group">
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio1">Flash Sale</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio2">Laptop New</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio3">Laptop Gaming</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio4" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio4">Laptop cũ</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio5" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio5">PC theo nhu cầu</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio6" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio6">Máy tính đề bàn</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio8" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio8">Màn hình</label>
-      <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio9" autocomplete="off" />
-      <label class="btn btn-outline-danger cus-label" for="vbtn-radio9">Linh/phụ kiện</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio1" data-target="flashsale">Flash Sale</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio2" data-target="laptopnew">Laptop</br>New</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio3" data-target="laptopgaming">Laptop</br>Gaming</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio4" data-target="laptopcu">Laptop cũ</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio5" data-target="pc">PC theo</br>nhu cầu</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio6" data-target="maytinhdeban">Máy tính</br>đề bàn</label>
+        <label class="btn btn-outline-danger cus-label" for="vbtn-radio8" data-target="manhinh">Màn hình</label>
     </div>
-  </div>
+</div>
 
   <div class="container mt-3" style="position: relative">
     <section id="flashsale">

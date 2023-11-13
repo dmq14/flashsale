@@ -1,72 +1,36 @@
-let lastChecked = 0;
-const mobileBtns = document.querySelectorAll(".menu-btn-mobile .btn-check");
-const desktopBtns = document.querySelectorAll(".menu-btn .btn-check");
-const sections = document.querySelectorAll("section");
-
-const handleScroll = (index) => {
-    sections[index].scrollIntoView({ behavior: "smooth" });
-    lastChecked = index;
-};
-
-mobileBtns.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        handleScroll(index);
-    });
-});
-
-desktopBtns.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-        handleScroll(index);
-    });
-});
-
-window.addEventListener("scroll", () => {
-    sections.forEach((section, index) => {
-        const top = section.getBoundingClientRect().top;
-        if (top >= 0 && top <= window.innerHeight && window.innerWidth > 768) {
-            desktopBtns[lastChecked].checked = false;
-            desktopBtns[index].checked = true;
-            lastChecked = index;
-
-        }
-    });
-});
 document.addEventListener('DOMContentLoaded', function () {
-    const sections = document.querySelectorAll('section');
-    const radioBtns = document.querySelectorAll('.btn-check');
+    initializeScrollAndCheck('.cus-label', 'section');
 
-    function isAtLeast70PercentVisible(element) {
-        const rect = element.getBoundingClientRect();
-        let threshold;
+    initializeScrollAndCheck('.cus-label-mobile', 'section');
+});
 
-        if (window.innerWidth <= 768) {
-            threshold = 0.70;
-        } else {
-            threshold = 1;
-        }
+function initializeScrollAndCheck(buttonSelector, sectionSelector) {
+    const buttons = document.querySelectorAll(buttonSelector);
+    const sections = document.querySelectorAll(sectionSelector);
 
-        const elementHeight = rect.bottom - rect.top;
-        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-        const visiblePercentage = (viewportHeight - Math.abs(rect.top)) / elementHeight;
-
-        return visiblePercentage >= threshold;
-    }
-
-    function handleScroll() {
-        sections.forEach((section, index) => {
-            if (isAtLeast70PercentVisible(section)) {
-                radioBtns.forEach((btn) => {
-                    btn.checked = false;
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const targetId = entry.target.id;
+                buttons.forEach(button => {
+                    button.classList.toggle('active', button.getAttribute('data-target') === targetId);
                 });
-                radioBtns[index].checked = true;
             }
         });
-    }
+    }, { threshold: 0.5 });
 
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('touchmove', handleScroll);
-});
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetId = button.getAttribute('data-target');
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+}
 document.getElementById('toggleButton').addEventListener('click', function () {
     var buttonText = this.innerHTML.trim();
     if (buttonText === 'Xem thêm') {
