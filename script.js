@@ -1,20 +1,41 @@
 document.addEventListener('DOMContentLoaded', function () {
-    initializeScrollAndCheck('.cus-label', 'section');
+    var labels = document.querySelectorAll('.btn-cus-menu');
 
-    initializeScrollAndCheck('.cus-label-mobile', 'section');
+    labels.forEach(function (label) {
+        label.addEventListener('click', function () {
+            // Remove 'active' class from all labels
+            labels.forEach(function (el) {
+                el.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked label
+            label.classList.add('active');
+        });
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    initializeScrollAndCheck('.cus-label', 'section', '.custom-btn-gr');
+    initializeScrollAndCheck('.cus-label-mobile', 'section', '.custom-btn-gr-mobile');
 });
 
-function initializeScrollAndCheck(buttonSelector, sectionSelector) {
+function initializeScrollAndCheck(buttonSelector, sectionSelector, scrollContainerSelector) {
     const buttons = document.querySelectorAll(buttonSelector);
     const sections = document.querySelectorAll(sectionSelector);
+    const scrollContainer = document.querySelector(scrollContainerSelector);
+
+    let activeButton = null;
+    let isManualClick = false;
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const targetId = entry.target.id;
-                buttons.forEach(button => {
-                    button.classList.toggle('active', button.getAttribute('data-target') === targetId);
-                });
+                const targetButton = document.querySelector(`${buttonSelector}[data-target="${targetId}"]`);
+
+                if (!isManualClick && activeButton !== targetButton) {
+                    updateActiveButton(targetButton);
+                    scrollContainer.scrollLeft = targetButton.offsetLeft - scrollContainer.clientWidth / 2;
+                }
             }
         });
     }, { threshold: 0.5 });
@@ -25,12 +46,33 @@ function initializeScrollAndCheck(buttonSelector, sectionSelector) {
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            isManualClick = true;
+
+            // Uncheck previously active button and remove hover effect
+            if (activeButton) {
+                activeButton.classList.remove('active', 'hover');
+            }
+
             const targetId = button.getAttribute('data-target');
             const targetSection = document.getElementById(targetId);
             targetSection.scrollIntoView({ behavior: 'smooth' });
+            isManualClick = false;
         });
     });
+
+    function updateActiveButton(button) {
+        if (activeButton) {
+            activeButton.classList.remove('active', 'hover');
+        }
+
+        if (button) {
+            button.classList.add('active');
+            activeButton = button;
+        }
+    }
 }
+
+
 document.getElementById('toggleButton').addEventListener('click', function () {
     var buttonText = this.innerHTML.trim();
     if (buttonText === 'Xem thêm') {

@@ -752,8 +752,14 @@ h3.title-countdown {
         align-items: center;
     }
 
+    .btn-cus-menu.active {
+        color: #ffffffff;
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
     .custom-btn-gr-mobile label {
         font-size: 14px;
+        border: 1px solid #dc3545;
     }
 
     .custom-btn-gr-mobile {
