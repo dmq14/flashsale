@@ -142,6 +142,22 @@ button.nav-link {
     outline: none !important;
 }
 
+.card {
+    border: 1px solid gray !important;
+}
+
+img.img-fluid {
+    border: 1px solid gray;
+}
+
+img.d-block.w-100.rounded {
+    border: 1px solid gray;
+}
+
+button.btn.btn-light.btn-more {
+    border: 1px solid gray;
+}
+
 button.custom-font-btn {
     width: auto;
     height: auto;
@@ -757,6 +773,7 @@ h3.title-countdown {
         background-color: #dc3545;
         border-color: #dc3545;
     }
+
     .custom-btn-gr-mobile label {
         font-size: 14px;
         border: 1px solid #dc3545;
