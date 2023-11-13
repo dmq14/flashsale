@@ -2,7 +2,9 @@ body {
     background-color: #ffe60024 !important;
     padding-bottom: 30px;
 }
-
+.nav-item button{
+    cursor: pointer;
+}
 #carouselExample {
     display: none;
 }
