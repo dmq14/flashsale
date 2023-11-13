@@ -618,11 +618,15 @@ h3.title-countdown {
     .btn-scroll-prd {
         height: 35px;
         width: 35px;
+        display: contents;
     }
-
+    .btn-scroll-x span,
+    .btn-scroll-prd span{
+        background-color: rgba(128, 128, 128, 0.3);
+    }
     i.fa.fa-angle-left,
     i.fa.fa-angle-right {
-        font-size: xx-large;
+        font-size: 25px;
     }
 
     .custom-filters-btn {
