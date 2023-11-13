@@ -136,6 +136,10 @@ button.nav-link {
     width: 140px;
     height: 75px;
     background-color: #85858524;
+    padding: 6px 10px;
+    border: none;
+    color: snow;
+    outline: none !important;
 }
 
 button.custom-font-btn {
@@ -234,7 +238,14 @@ button.nav-link {
 }
 
 .filters-product {
-    margin: 5px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.custom-text-radio {
+    margin-bottom: 10px;
+    color: snow;
 }
 
 .custom-filters-btn {
@@ -332,8 +343,30 @@ span#minutes::before {
 
 .btn-scroll-x {
     border: none;
-    background: rgba(128, 128, 128, 0.3);
+    background-color: rgba(128, 128, 128, 0.3);
+    height: 60px;
+    width: 30px;
+}
 
+.custom-btn-slide {
+    outline: none !important;
+    border: none !important;
+}
+
+i.fa.fa-angle-left,
+i.fa.fa-angle-right {
+    font-size: xxx-large;
+
+}
+
+.custom-background {
+    background-color: snow;
+    border: 1px solid #c5c2c2;
+    margin: 5px;
+}
+
+button#toggleButton {
+    border: 1px solid #c5c2c2;
 }
 
 .scroll-prd {
@@ -397,6 +430,18 @@ span#minutes::before {
 .icon-list-custom-button {
     padding-top: 0;
     padding-bottom: 0;
+}
+
+
+.custom-padding-btn.active,
+.icon-list-custom-button.active {
+    margin: 2px;
+    overflow: hidden;
+}
+
+.custom-font-btn {
+    overflow: hidden;
+    margin: 2px;
 }
 
 .icon-list-custom-image {
@@ -553,8 +598,13 @@ h3.title-countdown {
 
     .btn-scroll-x,
     .btn-scroll-prd {
-        height: 23px;
-        width: 23px;
+        height: 35px;
+        width: 35px;
+    }
+
+    i.fa.fa-angle-left,
+    i.fa.fa-angle-right {
+        font-size: xx-large;
     }
 
     .custom-filters-btn {

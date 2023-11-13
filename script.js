@@ -24,9 +24,9 @@ window.addEventListener("scroll", () => {
     sections.forEach((section, index) => {
         const top = section.getBoundingClientRect().top;
         if (top >= 0 && top <= window.innerHeight && window.innerWidth > 768) {
-                desktopBtns[lastChecked].checked = false;
-                desktopBtns[index].checked = true;
-                lastChecked = index;
+            desktopBtns[lastChecked].checked = false;
+            desktopBtns[index].checked = true;
+            lastChecked = index;
 
         }
     });
@@ -70,13 +70,15 @@ document.addEventListener('DOMContentLoaded', function () {
 document.getElementById('toggleButton').addEventListener('click', function () {
     var buttonText = this.innerHTML.trim();
     if (buttonText === 'Xem thêm') {
-      this.innerHTML = 'Thu gọn';
+        this.innerHTML = 'Thu gọn';
     } else {
-      this.innerHTML = 'Xem thêm';
+        this.innerHTML = 'Xem thêm';
     }
-  });
-  
+});
+
 function scrollContainerLeft() {
+    btnScrollRight = document.querySelector(".btn-scroll-x");
+    btnScrollRight.style.outline = "none";
     document.getElementById('productListContainer').scrollBy({
         left: -500,
         behavior: 'smooth'
@@ -88,6 +90,8 @@ function scrollContainerLeft() {
 }
 
 function scrollContainerRight() {
+    btnScrollRight = document.querySelector(".btn-scroll-x");
+    btnScrollRight.style.outline = "none";
     document.getElementById('productListContainer').scrollBy({
         left: 500,
         behavior: 'smooth'
@@ -629,6 +633,7 @@ const cards = document.querySelectorAll('.icon-list-custom-ul');
 function checkOverflow(container, card) {
     if (card.scrollWidth > container.clientWidth) {
         card.style.justifyContent = 'space-between';
+        card.style.paddingBottom = "10px"
     } else {
         card.style.justifyContent = 'center';
     }
